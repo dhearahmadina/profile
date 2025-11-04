@@ -3,99 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Dhea - Responsif</title>
+    <title>Website Dhea - Responsif & Rapi</title>
     <style>
-        /* Gaya Dasar */
         body {
             font-family: "Times New Roman", serif;
-            margin: 20px; /* Kurangi margin untuk efisiensi ruang */
-            padding: 10px;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f8f8; /* Sedikit latar belakang agar konten menonjol */
+            color: #333;
         }
 
         h1 {
-            font-size: 36px; /* Sedikit disesuaikan untuk layar kecil */
+            font-size: 38px;
             font-weight: bold;
-            text-align: center; /* Posisikan judul di tengah */
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
         }
 
         h2 {
-            font-size: 24px;
+            font-size: 26px;
             margin-top: 30px;
+            margin-bottom: 20px;
             text-align: center;
+            color: #555;
         }
 
-        /* Gaya Tabel */
-        table {
-            border-collapse: collapse;
-            width: 90%; /* Gunakan persentase agar responsif */
-            max-width: 600px; /* Batasi lebar maksimum agar tabel tidak terlalu lebar di desktop */
-            margin: 10px auto; /* Tengah-kan tabel */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Tambahkan sedikit bayangan agar lebih menonjol */
+        /* Container untuk Biodata */
+        .biodata-container {
+            max-width: 500px; /* Lebar maksimum seperti di gambar */
+            margin: 0px auto; /* Tengah-kan container */
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px; /* Sudut sedikit membulat */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden; /* Penting untuk border dalam */
         }
 
-        td {
-            border: 2px solid black;
-            padding: 10px;
-            font-size: 18px;
-            text-align: left; /* Selalu rata kiri secara default */
-            vertical-align: top;
+        /* Setiap item biodata (Nama, NPM, dll.) */
+        .biodata-item {
+            display: flex; /* Menggunakan flexbox untuk layout 2 kolom */
+            flex-wrap: wrap; /* Izinkan wrapping pada layar kecil */
+            border-bottom: 1px dotted black; /* Garis pemisah antar item */
         }
 
-        /* Gaya Khusus Kolom */
-        td:first-child {
+        .biodata-item:last-child {
+            border-bottom: none; /* Tidak ada garis di item terakhir */
+        }
+
+        /* Label (Nama, NPM, Kelas, dll.) */
+        .biodata-label {
+            flex: 1; /* Ambil proporsi ruang */
+            padding: 12px 15px;
             font-weight: bold;
-            width: 120px; /* Lebar label */
+            background-color: #f0f0f0; /* Latar belakang abu-abu muda */
+            border-right: 1px solid #ddd; /* Pemisah vertikal */
+            min-width: 120px; /* Lebar minimum untuk label */
         }
 
-        td:nth-child(2) {
-            width: 15px; /* Lebar titik dua (:) */
-            text-align: center;
+        /* Value (Dhea Rahmadina, C1C025040, dll.) */
+        .biodata-value {
+            flex: 2; /* Ambil lebih banyak ruang untuk nilai */
+            padding: 12px 15px;
+            color: #666;
+            min-width: 150px; /* Lebar minimum untuk nilai */
         }
 
-        td:last-child {
-            width: auto; /* Biarkan kolom ini mengambil sisa ruang */
-        }
-
-        /* Media Query untuk Responsivitas (Layar Kecil/Ponsel) */
-        @media screen and (max-width: 600px) {
+        /* Media Query untuk Responsivitas (Layar Sangat Kecil/Ponsel) */
+        @media screen and (max-width: 480px) {
             h1 {
-                font-size: 28px;
+                font-size: 30px;
             }
-
-            table {
-                width: 100%; /* Penuhi lebar layar */
-                display: block; /* Penting untuk responsivitas */
+            h2 {
+                font-size: 22px;
             }
-
-            tr {
-                border-bottom: 1px solid #ddd;
-                display: block; /* Setiap baris menjadi blok */
+            .biodata-container {
+                margin: 0 10px; /* Sedikit margin dari tepi layar */
             }
-
-            td {
-                border: none; /* Hilangkan batas antar sel */
-                border-bottom: 1px dotted black; /* Tambahkan batas putus-putus untuk pemisah baris */
-                display: block; /* Setiap sel menjadi blok (bertumpuk) */
-                width: 100% !important; /* Ambil seluruh lebar */
-                box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
-                padding-left: 10px;
-                padding-right: 10px;
+            .biodata-item {
+                flex-direction: column; /* Tumpuk label dan value */
             }
-
-            td:first-child {
-                font-weight: bold;
-                background-color: #f0f0f0; /* Beri latar belakang pada label */
-                padding-top: 15px;
-                padding-bottom: 5px;
+            .biodata-label {
+                border-right: none; /* Hapus border vertikal */
+                border-bottom: 1px dotted #ccc; /* Border bawah untuk label */
+                background-color: #e9e9e9; /* Sedikit lebih gelap */
+                padding-bottom: 8px;
             }
-            
-            td:nth-child(2) {
-                display: none; /* Sembunyikan titik dua (:) saat tumpukan */
-            }
-
-            td:last-child {
-                padding-top: 5px;
-                padding-bottom: 15px;
+            .biodata-value {
+                padding-top: 8px;
             }
         }
     </style>
@@ -103,32 +98,28 @@
 <body>
     <h1>Selamat Datang di Website saya</h1>
     <h2>Biodata Saya</h2>
-    <table>
-        <tr>
-            <td>Nama</td>
-            <td>:</td>
-            <td>Dhea Rahmadina</td>
-        </tr>
-        <tr>
-            <td>NPM</td>
-            <td>:</td>
-            <td>C1C025040</td>
-        </tr>
-        <tr>
-            <td>Kelas</td>
-            <td>:</td>
-            <td>1D Akuntansi</td>
-        </tr>
-        <tr>
-            <td>Umur</td>
-            <td>:</td>
-            <td>18 Tahun</td>
-        </tr>
-        <tr>
-            <td>Hobby</td>
-            <td>:</td>
-            <td>Bernyanyi</td>
-        </tr>
-    </table>
+
+    <div class="biodata-container">
+        <div class="biodata-item">
+            <div class="biodata-label">Nama</div>
+            <div class="biodata-value">Dhea Rahmadina</div>
+        </div>
+        <div class="biodata-item">
+            <div class="biodata-label">NPM</div>
+            <div class="biodata-value">C1C025040</div>
+        </div>
+        <div class="biodata-item">
+            <div class="biodata-label">Kelas</div>
+            <div class="biodata-value">1D Akuntansi</div>
+        </div>
+        <div class="biodata-item">
+            <div class="biodata-label">Umur</div>
+            <div class="biodata-value">18 Tahun</div>
+        </div>
+        <div class="biodata-item">
+            <div class="biodata-label">Hobby</div>
+            <div class="biodata-value">Bernyanyi</div>
+        </div>
+    </div>
 </body>
 </html>
