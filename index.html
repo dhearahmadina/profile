@@ -5,82 +5,131 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Website Dhea</title>
   <style>
+    /* Gaya Umum Halaman */
     body {
       font-family: "Times New Roman", serif;
-      margin: 50px;
+      background-color: #f7f7f7;
+      color: #222;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
     }
 
+    /* Header */
     h1 {
-      font-size: 48px;
+      font-size: 2.2em;
       font-weight: bold;
+      margin-top: 40px;
+      text-align: center;
+      color: #333;
     }
 
     h2 {
-      font-size: 24px;
-      margin-top: 30px;
+      font-size: 1.5em;
+      margin-top: 20px;
+      color: #444;
+      text-align: center;
+    }
+
+    /* Bungkus tabel agar tidak menempel ke tepi layar */
+    .biodata-container {
+      background: #fff;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      width: 90%;
+      max-width: 500px;
     }
 
     table {
       border-collapse: collapse;
-      width: 400px;
-      margin-top: 10px;
+      width: 100%;
     }
 
     td {
-      border: 2px solid black;
-      padding: 8px;
-      font-size: 18px;
+      border: 1.5px solid #333;
+      padding: 10px;
+      font-size: 1em;
     }
 
     td:first-child {
       font-weight: bold;
-      width: 100px;
-      text-align: left;
+      width: 30%;
+      background-color: #f1f1f1;
     }
 
     td:nth-child(2) {
-      width: 10px;
       text-align: center;
+      width: 5%;
+      background-color: #fafafa;
     }
 
     td:last-child {
-      width: 250px;
+      width: 65%;
+    }
+
+    /* Responsif untuk layar kecil (HP) */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 1.8em;
+      }
+
+      h2 {
+        font-size: 1.2em;
+      }
+
+      .biodata-container {
+        padding: 15px;
+      }
+
+      table, td {
+        font-size: 0.95em;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Selamat Datang di Website saya</h1>
-
+  <h1>Selamat Datang di Website Saya</h1>
   <h2>Biodata Saya</h2>
 
-  <table>
-    <tr>
-      <td>Nama</td>
-      <td>:</td>
-      <td>Dhea Rahmadina</td>
-    </tr>
-    <tr>
-      <td>NPM</td>
-      <td>:</td>
-      <td>C1C025040</td>
-    </tr>
-    <tr>
-      <td>Kelas</td>
-      <td>:</td>
-      <td>1D Akuntansi</td>
-    </tr>
-    <tr>
-      <td>Umur</td>
-      <td>:</td>
-      <td>18 Tahun</td>
-    </tr>
-    <tr>
-      <td>Hobby</td>
-      <td>:</td>
-      <td>Bernyanyi</td>
-    </tr>
-  </table>
+  <div class="biodata-container">
+    <table>
+      <tr>
+        <td>Nama</td>
+        <td>:</td>
+        <td>Dhea Rahmadina</td>
+      </tr>
+      <tr>
+        <td>NPM</td>
+        <td>:</td>
+        <td>C1C025040</td>
+      </tr>
+      <tr>
+        <td>Kelas</td>
+        <td>:</td>
+        <td>1D Akuntansi</td>
+      </tr>
+      <tr>
+        <td>Umur</td>
+        <td>:</td>
+        <td>18 Tahun</td>
+      </tr>
+      <tr>
+        <td>Hobby</td>
+        <td>:</td>
+        <td>Bernyanyi</td>
+      </tr>
+    </table>
+  </div>
 
 </body>
 </html>
