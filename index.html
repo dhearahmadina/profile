@@ -1,135 +1,134 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Dhea</title>
-  <style>
-    /* Gaya Umum Halaman */
-    body {
-      font-family: "Times New Roman", serif;
-      background-color: #f7f7f7;
-      color: #222;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Dhea - Responsif</title>
+    <style>
+        /* Gaya Dasar */
+        body {
+            font-family: "Times New Roman", serif;
+            margin: 20px; /* Kurangi margin untuk efisiensi ruang */
+            padding: 10px;
+        }
 
-    /* Header */
-    h1 {
-      font-size: 2.2em;
-      font-weight: bold;
-      margin-top: 40px;
-      text-align: center;
-      color: #333;
-    }
+        h1 {
+            font-size: 36px; /* Sedikit disesuaikan untuk layar kecil */
+            font-weight: bold;
+            text-align: center; /* Posisikan judul di tengah */
+        }
 
-    h2 {
-      font-size: 1.5em;
-      margin-top: 20px;
-      color: #444;
-      text-align: center;
-    }
+        h2 {
+            font-size: 24px;
+            margin-top: 30px;
+            text-align: center;
+        }
 
-    /* Bungkus tabel agar tidak menempel ke tepi layar */
-    .biodata-container {
-      background: #fff;
-      padding: 20px;
-      margin-top: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-      width: 90%;
-      max-width: 500px;
-    }
+        /* Gaya Tabel */
+        table {
+            border-collapse: collapse;
+            width: 90%; /* Gunakan persentase agar responsif */
+            max-width: 600px; /* Batasi lebar maksimum agar tabel tidak terlalu lebar di desktop */
+            margin: 10px auto; /* Tengah-kan tabel */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Tambahkan sedikit bayangan agar lebih menonjol */
+        }
 
-    table {
-      border-collapse: collapse;
-      width: 100%;
-    }
+        td {
+            border: 2px solid black;
+            padding: 10px;
+            font-size: 18px;
+            text-align: left; /* Selalu rata kiri secara default */
+            vertical-align: top;
+        }
 
-    td {
-      border: 1.5px solid #333;
-      padding: 10px;
-      font-size: 1em;
-    }
+        /* Gaya Khusus Kolom */
+        td:first-child {
+            font-weight: bold;
+            width: 120px; /* Lebar label */
+        }
 
-    td:first-child {
-      font-weight: bold;
-      width: 30%;
-      background-color: #f1f1f1;
-    }
+        td:nth-child(2) {
+            width: 15px; /* Lebar titik dua (:) */
+            text-align: center;
+        }
 
-    td:nth-child(2) {
-      text-align: center;
-      width: 5%;
-      background-color: #fafafa;
-    }
+        td:last-child {
+            width: auto; /* Biarkan kolom ini mengambil sisa ruang */
+        }
 
-    td:last-child {
-      width: 65%;
-    }
+        /* Media Query untuk Responsivitas (Layar Kecil/Ponsel) */
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
 
-    /* Responsif untuk layar kecil (HP) */
-    @media (max-width: 600px) {
-      body {
-        padding: 10px;
-      }
+            table {
+                width: 100%; /* Penuhi lebar layar */
+                display: block; /* Penting untuk responsivitas */
+            }
 
-      h1 {
-        font-size: 1.8em;
-      }
+            tr {
+                border-bottom: 1px solid #ddd;
+                display: block; /* Setiap baris menjadi blok */
+            }
 
-      h2 {
-        font-size: 1.2em;
-      }
+            td {
+                border: none; /* Hilangkan batas antar sel */
+                border-bottom: 1px dotted black; /* Tambahkan batas putus-putus untuk pemisah baris */
+                display: block; /* Setiap sel menjadi blok (bertumpuk) */
+                width: 100% !important; /* Ambil seluruh lebar */
+                box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
+                padding-left: 10px;
+                padding-right: 10px;
+            }
 
-      .biodata-container {
-        padding: 15px;
-      }
+            td:first-child {
+                font-weight: bold;
+                background-color: #f0f0f0; /* Beri latar belakang pada label */
+                padding-top: 15px;
+                padding-bottom: 5px;
+            }
+            
+            td:nth-child(2) {
+                display: none; /* Sembunyikan titik dua (:) saat tumpukan */
+            }
 
-      table, td {
-        font-size: 0.95em;
-      }
-    }
-  </style>
+            td:last-child {
+                padding-top: 5px;
+                padding-bottom: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <h1>Selamat Datang di Website Saya</h1>
-  <h2>Biodata Saya</h2>
-
-  <div class="biodata-container">
+    <h1>Selamat Datang di Website saya</h1>
+    <h2>Biodata Saya</h2>
     <table>
-      <tr>
-        <td>Nama</td>
-        <td>:</td>
-        <td>Dhea Rahmadina</td>
-      </tr>
-      <tr>
-        <td>NPM</td>
-        <td>:</td>
-        <td>C1C025040</td>
-      </tr>
-      <tr>
-        <td>Kelas</td>
-        <td>:</td>
-        <td>1D Akuntansi</td>
-      </tr>
-      <tr>
-        <td>Umur</td>
-        <td>:</td>
-        <td>18 Tahun</td>
-      </tr>
-      <tr>
-        <td>Hobby</td>
-        <td>:</td>
-        <td>Bernyanyi</td>
-      </tr>
+        <tr>
+            <td>Nama</td>
+            <td>:</td>
+            <td>Dhea Rahmadina</td>
+        </tr>
+        <tr>
+            <td>NPM</td>
+            <td>:</td>
+            <td>C1C025040</td>
+        </tr>
+        <tr>
+            <td>Kelas</td>
+            <td>:</td>
+            <td>1D Akuntansi</td>
+        </tr>
+        <tr>
+            <td>Umur</td>
+            <td>:</td>
+            <td>18 Tahun</td>
+        </tr>
+        <tr>
+            <td>Hobby</td>
+            <td>:</td>
+            <td>Bernyanyi</td>
+        </tr>
     </table>
-  </div>
-
 </body>
 </html>
